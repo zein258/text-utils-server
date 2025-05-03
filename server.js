@@ -18,8 +18,8 @@ app.post('/validateText', (req, res) => {
 
 app.post('/formatUID', (req, res) => {
   const { uid } = req.body;
-  if (!uid || uid.length !== 20) return res.status(400).send('UID must be 20 characters.');
-  const formatted = `SW2-${uid.slice(0,3)}-${uid.slice(3,7)}-${uid.slice(7,11)}-${uid.slice(11,15)}-${uid.slice(15,19)}`;
+  if (!uid || uid.length !== 16) return res.status(400).send('UID must be 16 characters.');
+  const formatted = `SW2-${uid.slice(0,3)}-${uid.slice(3,7)}-${uid.slice(7,11)}-${uid.slice(11,15)}`;
   res.json({ result: formatted });
 });
 
