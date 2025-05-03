@@ -41,6 +41,10 @@ app.post('/formatInteger', (req, res) => {
   res.json({ result: formatted });
 });
 
+app.get('/status', (req, res) => {
+  res.json({ status: "I am awake." });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
